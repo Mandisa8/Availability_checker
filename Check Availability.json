@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "1565fcc0-fb54-dc48-a317-633301a8562b",
+		"name": "Check Availability",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Check Availability",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"tests[\"Body matches string\"] = responseBody.has(data.rate)"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "rate",
+						"value": "{{rate}}"
+					},
+					{
+						"key": "",
+						"value": ""
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://adcesbhgwd1.hiw.com:8080/HotelGateway?MessageType=SAI_MSG_IN&PropertyId=ATLMD&MessageText=AU%20%0AAV%3AS%2FECHO%2FATLMD%2F%2F30APR19%2F1%2F{{rate}}%2F1%2F1%2F%2F%2F%2FP%0A",
+					"protocol": "http",
+					"host": [
+						"adcesbhgwd1",
+						"hiw",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"HotelGateway"
+					],
+					"query": [
+						{
+							"key": "MessageType",
+							"value": "SAI_MSG_IN"
+						},
+						{
+							"key": "PropertyId",
+							"value": "ATLMD"
+						},
+						{
+							"key": "MessageText",
+							"value": "AU%20%0AAV%3AS%2FECHO%2FATLMD%2F%2F30APR19%2F1%2F{{rate}}%2F1%2F1%2F%2F%2F%2FP%0A"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
